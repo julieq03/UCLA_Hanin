@@ -46,6 +46,12 @@ margin: 0 2em;
   justify-content: center;
 }
 
+
+.kclubDropdown button{
+  background-color: transparent !important;
+  border: transparent !important;
+}
+
 /* navbar end */
 
 /* Footer  start*/

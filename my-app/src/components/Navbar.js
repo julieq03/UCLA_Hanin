@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, BrowserRouter as Router, Link } from "react-router-dom";
 import logoImage from "../images/logoImage.png";
 import logo from "../images/logo.png";
+import KclubDropDown from "./KclubDropDown";
 
 const Navbar = () => {
   return (
@@ -18,9 +19,10 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div>
-          <NavLink to="/kclubs" className="linkmenuItem">
+          <KclubDropDown />
+          {/* <NavLink to="/kclubs" className="linkmenuItem">
             K-Clubs
-          </NavLink>
+          </NavLink> */}
         </div>
         <div>
           <NavLink to="/loginsignup" className="linkmenuItem">
