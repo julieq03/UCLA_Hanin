@@ -14,7 +14,7 @@ function Footer() {
         <div className="footer-link-upperRight">
           <div class="footer-link-items">
             <span>About Us</span>
-            <Link to="/sign-up">How it works</Link>
+            <Link to="/">How it works</Link>
             <Link to="/">Testimonials</Link>
             <Link to="/">Careers</Link>
             <Link to="/">Investors</Link>
@@ -22,9 +22,9 @@ function Footer() {
           </div>
           <div class="footer-link-items">
             <span>K-Clubs</span>
-            <Link to="/">KOJOBS</Link>
-            <Link to="/">KUBS</Link>
-            <Link to="/">KSEA</Link>
+            <Link to="/kclubs/kojobs">KOJOBS</Link>
+            <Link to="/kclubs/kubs">KUBS</Link>
+            <Link to="/kclubs/ksea">KSEA</Link>
           </div>
           <div class="footer-link-items">
             <span>Community</span>
