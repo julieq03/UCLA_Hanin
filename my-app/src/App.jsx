@@ -8,7 +8,8 @@ import Kubs from "./pages/Kubs";
 import Ksea from "./pages/Ksea";
 import LoginSignup from "./pages/LoginSignup";
 
-function App() {
+function App({userRepository}) {
+  console.log("@app.jsx, userRepository: " , userRepository);
   return (
     <BrowserRouter>
     <Routes>
@@ -17,7 +18,7 @@ function App() {
       <Route path="kclubs/kojobs" element={<Kojobs />} />
       <Route path="kclubs/kubs" element={<Kubs />} />
       <Route path="kclubs/ksea" element={<Ksea />} />
-      <Route path="/loginsignup" element={<LoginSignup />} />
+      <Route path="/loginsignup" element={<LoginSignup userRepository={userRepository}/>} />
     </Routes>
   </BrowserRouter>
   );

@@ -1,16 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
-export default function (props) {
+const Auth = ({ FileInput, onAdd }) => {
   let [authMode, setAuthMode] = useState("signin");
+  // const { name, uid, major, email, password } = useState(""); //deconstructiong이용!
+  const formRef = useRef();
+  const nameRef = useRef();
+  const uidRef = useRef();
+  const majorRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
   };
 
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const user = {
+      id: Date.now(), //uuid
+      name: nameRef.current.value || "",
+      uid: uidRef.current.value || "",
+      major: majorRef.current.value || "",
+      email: emailRef.current.value || "",
+      passwordRef: passwordRef.current.value || "",
+    };
+    // formRef.current.reset();
+    console.log("user onSubmit: ", user);
+    onAdd(user);
+  };
+
   if (authMode === "signin") {
     return (
       <div className="Auth-form-container">
-        <form className="Auth-form">
+        <form ref={formRef} className="Auth-form">
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="text-center">
@@ -63,7 +85,8 @@ export default function (props) {
           <div className="form-group mt-3">
             <label>Full Name</label>
             <input
-              type="email"
+              ref={nameRef}
+              type="text"
               className="form-control mt-1"
               placeholder="e.g Danny Lee"
             />
@@ -71,7 +94,8 @@ export default function (props) {
           <div className="form-group mt-3">
             <label>UID</label>
             <input
-              type="uid"
+              ref={uidRef}
+              type="text"
               className="form-control mt-1"
               placeholder="e.g 105128000"
             />
@@ -79,7 +103,8 @@ export default function (props) {
           <div className="form-group mt-3">
             <label>Major</label>
             <input
-              type="major"
+              ref={majorRef}
+              type="text"
               className="form-control mt-1"
               placeholder="e.g Computer Science"
             />
@@ -87,7 +112,8 @@ export default function (props) {
           <div className="form-group mt-3">
             <label>Email address</label>
             <input
-              type="email"
+              ref={emailRef}
+              type="text"
               className="form-control mt-1"
               placeholder="Email Address"
             />
@@ -95,13 +121,18 @@ export default function (props) {
           <div className="form-group mt-3">
             <label>Password</label>
             <input
+              ref={passwordRef}
               type="password"
               className="form-control mt-1"
               placeholder="Password"
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
+            <button
+              type="submit"
+              className="btn btn-primary"
+              onClick={onSubmit}
+            >
               Submit
             </button>
           </div>
@@ -112,4 +143,6 @@ export default function (props) {
       </form>
     </div>
   );
-}
+};
+
+export default Auth;
