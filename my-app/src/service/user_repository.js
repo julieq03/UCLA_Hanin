@@ -16,9 +16,6 @@ class UserRepository {
   }
 
   saveUser(userId, user) {
-    console.log("@saveUser. userId : ", userId, " user : ", user);
-    console.log("firebaseApp.database(): ", this.db);
-    // firebaseApp.database().ref(`${userId}/users/${user.uid}`).set(user);
     set(ref(this.db, `${userId}/users/${user.uid}`), user);
   }
 
