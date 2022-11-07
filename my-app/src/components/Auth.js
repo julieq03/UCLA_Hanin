@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import userPool from "../service/userPool";
 
 const Auth = ({ FileInput, onAdd }) => {
   let [authMode, setAuthMode] = useState("signin");
@@ -14,7 +15,7 @@ const Auth = ({ FileInput, onAdd }) => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
   };
 
-  const onSubmit = (event) => {
+  const onSignup = (event) => {
     event.preventDefault();
     const user = {
       id: Date.now(), //uuid
@@ -25,7 +26,21 @@ const Auth = ({ FileInput, onAdd }) => {
       passwordRef: passwordRef.current.value || "",
     };
     // formRef.current.reset();
-    console.log("user onSubmit: ", user);
+
+    userPool.signUp(
+      emailRef.current.value,
+      passwordRef.current.value,
+      null,
+      null,
+      (err, data) => {
+        if (err) {
+          return console.error(err);
+        }
+        alert("가입완료! 이메일 인증 후 로그인 하세요.");
+        // gologinBtn.current?.click();
+      }
+    );
+
     onAdd(user);
   };
 
@@ -131,7 +146,7 @@ const Auth = ({ FileInput, onAdd }) => {
             <button
               type="submit"
               className="btn btn-primary"
-              onClick={onSubmit}
+              onClick={onSignup}
             >
               Submit
             </button>
