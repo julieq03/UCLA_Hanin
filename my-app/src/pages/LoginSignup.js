@@ -14,7 +14,7 @@ function LoginSignup({ userRepository }) {
     updated[user.id] = user;
     setUsers(updated);
     console.log("user added : ", user);
-    userRepository.saveUser("userList", user);
+    userRepository.saveUser("userList", user); //saving into firebase db
 
     // userPool.signUp(user.email, user.password, [], [], (err, data) => {
     //   if (err) {
