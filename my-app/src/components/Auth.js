@@ -5,6 +5,7 @@ import userPool from "../service/userPool";
 const Auth = ({ onAdd }) => {
   let [authMode, setAuthMode] = useState("signin");
   let [cognitoUser, setCognitoUser] = useState("");
+  let [user, setUser] = useState(null);
   // const { name, uid, major, email, password } = useState(""); //deconstructiong이용!
   const formRef = useRef();
   const nameRef = useRef();
@@ -31,9 +32,9 @@ const Auth = ({ onAdd }) => {
       uid: uidRef.current.value || "",
       major: majorRef.current.value || "",
       email: emailRef.current.value || "",
-      passwordRef: passwordRef.current.value || "",
+      // password: passwordRef.current.value || "",
     };
-    // formRef.current.reset();
+    setUser(user);
 
     userPool.signUp(
       emailRef.current.value,
@@ -49,13 +50,13 @@ const Auth = ({ onAdd }) => {
         setAuthMode("verifyEmail");
       }
     );
-
-    onAdd(user);
   };
 
   const onVerify = (e) => {
     e.preventDefault();
+
     let verificationCode = vcodeRef.current.value;
+    // console.log("verificationCode : ", verificationCode);
 
     cognitoUser.confirmRegistration(
       verificationCode,
@@ -67,6 +68,8 @@ const Auth = ({ onAdd }) => {
         }
 
         alert("인증완료! 다시 로그인 해 주세요");
+        onAdd(user);
+        // console.log("user: ", user);
         navigateHome();
       }
     );
@@ -196,7 +199,7 @@ const Auth = ({ onAdd }) => {
               <br />
               <span>We have sent a verification code to your email.</span>
               <br />
-              <span>{emailRef.current.value}</span>
+              <span>{user.email}</span>
               <input
                 ref={vcodeRef}
                 type="text"
