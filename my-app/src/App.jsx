@@ -7,6 +7,7 @@ import Kojobs from "./pages/Kojobs";
 import Kubs from "./pages/Kubs";
 import Ksea from "./pages/Ksea";
 import LoginSignup from "./pages/LoginSignup";
+import {Account} from './components/Account'
 
 
 function App({userRepository}) {
