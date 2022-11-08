@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Auth from "../components/Auth";
+// import Signup from "../components/Signup";
+// import Login from "../components/Login";
+// import VerifyEmail from "../components/VerifyEmail";
 import userPool from "../service/userPool";
 
 function LoginSignup({ userRepository }) {
@@ -15,14 +18,6 @@ function LoginSignup({ userRepository }) {
     setUsers(updated);
     console.log("user added : ", user);
     userRepository.saveUser("userList", user); //saving into firebase db
-
-    // userPool.signUp(user.email, user.password, [], [], (err, data) => {
-    //   if (err) {
-    //     return console.error(err);
-    //   }
-    //   alert("가입완료! 이메일 인증 후 로그인 하세요.");
-    //   // gologinBtn.current?.click();
-    // });
   };
   const deleteUser = (user) => {
     const updated = { ...users };
