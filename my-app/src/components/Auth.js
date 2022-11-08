@@ -1,11 +1,15 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
 import userPool from "../service/userPool";
 
 const Auth = ({ onAdd }) => {
   let [authMode, setAuthMode] = useState("signin");
   let [cognitoUser, setCognitoUser] = useState("");
   let [user, setUser] = useState(null);
+  let [email, setEmail] = useState("");
+  let [password, setPassword] = useState("");
+
   // const { name, uid, major, email, password } = useState(""); //deconstructiong이용!
   const formRef = useRef();
   const nameRef = useRef();
@@ -75,6 +79,28 @@ const Auth = ({ onAdd }) => {
     );
   };
 
+  const onLogin = (e) => {
+    e.preventDefault();
+
+    const user = new CognitoUser({ Username: email, Pool: userPool });
+    const authDetails = new AuthenticationDetails({
+      Username: email,
+      Password: password,
+    });
+
+    user.authenticateUser(authDetails, {
+      onSuccess: (data) => {
+        console.log("onSuccess: ", data);
+      },
+      onFailure: (err) => {
+        console.error("onFailure: ", err);
+      },
+      newPasswordRequired: (data) => {
+        console.log("newPasswordRequired: ", data);
+      },
+    });
+  };
+
   if (authMode === "signin") {
     return (
       <div className="Auth-form-container">
@@ -93,6 +119,9 @@ const Auth = ({ onAdd }) => {
                 type="email"
                 className="form-control mt-1"
                 placeholder="Enter email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
             </div>
             <div className="form-group mt-3">
@@ -101,10 +130,17 @@ const Auth = ({ onAdd }) => {
                 type="password"
                 className="form-control mt-1"
                 placeholder="Enter password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={onLogin}
+              >
                 Submit
               </button>
             </div>
