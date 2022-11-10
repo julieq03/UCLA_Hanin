@@ -36,7 +36,7 @@ const Auth = ({ onAdd }) => {
           onAdd={onAdd}
           changeAuthMode={changeAuthMode}
           setUser={setUser}
-          setCognitoUser={setCognitoUser}
+          setCognitfoUser={setCognitoUser}
         />
       )}
       {authMode === "verifyEmail" && (
