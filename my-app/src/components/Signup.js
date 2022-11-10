@@ -190,19 +190,27 @@ const Signup = ({ onAdd, changeAuthMode, setUser, setCognitoUser }) => {
               required
             />
             {!passwordMatch && (
-              <span className="errorMessage">암호가 일치하지 않습니다.</span>
+              <span className="errorMessage">
+                암호가 일치하지 않습니다.
+                <br />
+              </span>
             )}
             {isEmpty && (
-              <span className="errorMessage">모든 항목을 기입 해 주세요.</span>
+              <span className="errorMessage">
+                모든 항목을 기입 해 주세요.
+                <br />
+              </span>
             )}
             {duplicateEmail && (
               <span className="errorMessage">
                 이미 이 이메일로 가입된 계정이 존재합니다.
+                <br />
               </span>
             )}
             {!validEmailForamt && (
               <span className="errorMessage">
                 이메일 형식이 아닙니다. 다시 한번 확인 해 주세요.
+                <br />
               </span>
             )}
             {!validPassword && (
