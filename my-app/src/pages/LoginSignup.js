@@ -2,10 +2,6 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Auth from "../components/Auth";
-// import Signup from "../components/Signup";
-// import Login from "../components/Login";
-// import VerifyEmail from "../components/VerifyEmail";
-import userPool from "../service/userPool";
 
 function LoginSignup({ userRepository }) {
   const [users, setUsers] = useState([]);
@@ -29,6 +25,7 @@ function LoginSignup({ userRepository }) {
   return (
     <React.Fragment>
       <Navbar />
+
       <Auth onAdd={createUser} deleteUser={deleteUser} />
       <Footer />
     </React.Fragment>

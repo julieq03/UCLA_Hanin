@@ -1,5 +1,6 @@
 import React, { useState, useRef, useContext } from "react";
 import userPool from "../service/userPool";
+import { AccountContext } from "./Account";
 
 const Login = ({ changeAuthMode }) => {
   const [email, setEmail] = useState("");
@@ -14,32 +15,20 @@ const Login = ({ changeAuthMode }) => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
+  const { authenticate } = useContext(AccountContext); //deconstructioning
+
   const onSubmit = (event) => {
     event.preventDefault();
-    const user = {
-      id: Date.now(), //uuid
-      name: nameRef.current.value || "",
-      uid: uidRef.current.value || "",
-      major: majorRef.current.value || "",
-      email: emailRef.current.value || "",
-      // password: passwordRef.current.value || "",
-    };
-    setUser(user);
 
-    userPool.signUp(
-      emailRef.current.value,
-      passwordRef.current.value,
-      [],
-      null,
-      (err, data) => {
-        if (err) {
-          return console.error(err);
-        }
-        setCognitoUser(data.user);
-        // navigateVerificationEmail();
-        // setAuthMode("verifyEmail");
-      }
-    );
+    console.log("email : ", email, ", password: ", password);
+
+    authenticate(email, password)
+      .then((data) => {
+        console.log("Logged In!", data);
+      })
+      .catch((err) => {
+        console.error("Failed to login", err);
+      });
   };
 
   return (
