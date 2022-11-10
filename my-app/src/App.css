@@ -170,10 +170,12 @@ margin: 0 2em;
 /* auth */
 .Auth-form-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: stretch;
   align-items: center;
   width: 100vw;
-  height: 70vh;
+  /* min-height: 80vh; */
+  margin: 3rem 0;
 }
 
 .Auth-form {
@@ -206,4 +208,9 @@ label {
   font-size: 14px;
   font-weight: 600;
   color: rgb(34, 34, 34);
+}
+
+.errorMessage{
+  font-family: 'Josefin+Sans';
+  color: red;
 }
