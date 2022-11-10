@@ -91,19 +91,22 @@ const Signup = ({ onAdd, changeAuthMode, setUser, setCognitoUser }) => {
           console.log("err.name: ", err.name);
           if (err.name === "UsernameExistsException") {
             setDuplicateEmail(true);
+          } else {
+            setDuplicateEmail(false);
           }
           if (err.name == "InvalidParameterException") {
             setValidEmailFormat(false);
+          } else {
+            setValidEmailFormat(true);
           }
           if (err.name == "InvalidPasswordException") {
             setValidPassword(false);
+          } else {
+            setValidPassword(true);
           }
           return console.error(err);
         }
 
-        setDuplicateEmail(false);
-        setValidEmailFormat(true);
-        setValidPassword(true);
         changeAuthMode("verifyEmail");
         setCognitoUser(data.user);
       }
