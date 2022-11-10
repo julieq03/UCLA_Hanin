@@ -1,6 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import userPool from "../service/userPool";
 import { AccountContext } from "./Account";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ changeAuthMode }) => {
   const [email, setEmail] = useState("");
@@ -14,8 +15,13 @@ const Login = ({ changeAuthMode }) => {
   const majorRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const navigate = useNavigate();
 
   const { authenticate } = useContext(AccountContext); //deconstructioning
+
+  const navigateHome = () => {
+    navigate("/");
+  };
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -25,6 +31,7 @@ const Login = ({ changeAuthMode }) => {
     authenticate(email, password)
       .then((data) => {
         console.log("Logged In!", data);
+        navigateHome();
       })
       .catch((err) => {
         console.error("Failed to login", err);

@@ -30,7 +30,6 @@ const Auth = ({ onAdd }) => {
 
   return (
     <Account>
-      <Status />
       {authMode === "signin" && <Login changeAuthMode={changeAuthMode} />}
       {authMode === "signup" && (
         <Signup
