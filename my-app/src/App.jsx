@@ -7,7 +7,7 @@ import Kojobs from "./pages/Kojobs";
 import Kubs from "./pages/Kubs";
 import Ksea from "./pages/Ksea";
 import LoginSignup from "./pages/LoginSignup";
-import {Account} from './components/Account'
+import Profile from './pages/Profile';
 
 
 function App({userRepository}) {
@@ -21,6 +21,7 @@ function App({userRepository}) {
       <Route path="kclubs/kubs" element={<Kubs />} />
       <Route path="kclubs/ksea" element={<Ksea />} />
       <Route path="/loginsignup" element={<LoginSignup userRepository={userRepository}/>} />
+      <Route path="myprofile" element={<Profile />} />
 
     </Routes>
   </BrowserRouter>
