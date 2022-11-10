@@ -16,6 +16,7 @@ const Navbar = () => {
       user.signOut();
       setStatus(false);
       setUser(null);
+      window.location.reload();
     }
   };
 
@@ -27,7 +28,7 @@ const Navbar = () => {
       setUser(user);
       setStatus(true);
     } else {
-      console.log("아무도 로그인 안했음.");
+      // console.log("아무도 로그인 안했음.");
     }
   });
 
