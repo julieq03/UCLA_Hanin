@@ -5,11 +5,7 @@
 /* Navbar */
 .navbar{
   padding: 0.5em;
-<<<<<<< Updated upstream
-  height: 64px;
-=======
-  height: 7.5vh;
->>>>>>> Stashed changes
+  height: 5vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -146,7 +142,7 @@ margin: 0 2em;
 
 .homepageBanner{
 
-  height: 92.5vh;
+  height: 95vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
