@@ -215,12 +215,15 @@ p {
 }
 
 .footer-link-items span {
-  font-size: 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
   font-family: 'Josefin+Sans';
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 
 }
+
+
 .footer-link-items a{
   color: #fff;
   font-family: 'Josefin+Sans';
@@ -231,6 +234,7 @@ p {
 .footer-link-items a:hover{
   color: var(--color-dark-grey);
   transition: 0.3s ease-out;
+  text-decoration: none;
 }
 
 
