@@ -8,6 +8,7 @@ import Kubs from "./pages/Kubs";
 import Ksea from "./pages/Ksea";
 import LoginSignup from "./pages/LoginSignup";
 import Profile from './pages/Profile';
+import BuySell from './pages/buySell';
 
 
 function App({userRepository}) {
@@ -22,7 +23,7 @@ function App({userRepository}) {
       <Route path="kclubs/ksea" element={<Ksea />} />
       <Route path="/loginsignup" element={<LoginSignup userRepository={userRepository}/>} />
       <Route path="myprofile" element={<Profile />} />
-
+      <Route path="/bruinmarket/buysell" element={<BuySell />} />
     </Routes>
   </BrowserRouter>
   );

@@ -293,6 +293,20 @@ p {
 
 }
 
+.banner{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner h1{
+  color: white;
+}
+
 /* auth */
 .Auth-form-container {
   display: flex;
