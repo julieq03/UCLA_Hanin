@@ -29,6 +29,12 @@
   --animation-duration: 300ms;
 }
 
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 
 /* Typography */
 h1 {
@@ -72,7 +78,7 @@ p {
   background-color: transparent;
   color: var(--color-white);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: var(--weight-bold);
   font-family: 'Josefin+Sans';
 }
@@ -99,6 +105,7 @@ p {
   color: var(--color-white);
   text-decoration: none;
   font-weight: var(--weight-bold);
+  font-size: 1rem;
   font-family: 'Josefin+Sans';
 }
 
@@ -171,6 +178,7 @@ p {
 
 /* Footer  start*/
 .footer-container {
+  margin-top: auto;
   background-color: var(--color-light-blue);
   padding: 2rem;
   display: flex;
