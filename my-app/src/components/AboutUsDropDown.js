@@ -1,6 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import Dropdown from "react-bootstrap/Dropdown";
+// import Dropdown from "react-bootstrap/Dropdown";
+import Dropdown from "rsuite/Dropdown";
+import "rsuite/dist/rsuite.min.css";
 
 export default function AboutUsDropDown() {
   return (
@@ -21,17 +23,9 @@ export default function AboutUsDropDown() {
 
       <Dropdown title="GeeksforGeeks">
         <Dropdown.Item>Item 1</Dropdown.Item>
-        <Dropdown.Menu title="Item 2">
+        <Dropdown.Menu title="SubMenu">
           <Dropdown.Item>Item 2A</Dropdown.Item>
           <Dropdown.Item>Item 2B</Dropdown.Item>
-        </Dropdown.Menu>
-        <Dropdown.Item>Item 3</Dropdown.Item>
-        <Dropdown.Menu title="Item 4">
-          <Dropdown.Menu title="Item 4A">
-            <Dropdown.Item>Item 4A-A</Dropdown.Item>
-            <Dropdown.Item>Item 4A-B</Dropdown.Item>
-          </Dropdown.Menu>
-          <Dropdown.Item>Item 4B</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>
