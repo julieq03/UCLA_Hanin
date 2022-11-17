@@ -5,7 +5,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 export default function KclubDropDown() {
   return (
     <div>
-      <Dropdown className="kclubDropdown">
+      <Dropdown className="dropdownMenu">
         <Dropdown.Toggle variant="success">K-clubs</Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item href="/kclubs/kojobs">KOJOBS</Dropdown.Item>

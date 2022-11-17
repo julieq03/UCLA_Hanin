@@ -32,27 +32,27 @@
 
 /* Typography */
 h1 {
-  font-size: var(--font-large);
+  /* font-size: var(--font-large); */
   font-weight: var(--weight-bold);
   color: var(--color-black);
   margin: 16px 0;
 }
 h2 {
-  font-size: var(--font-medium);
+  /* font-size: var(--font-medium); */
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
   margin: 8px 0;
 }
 
 h3 {
-  font-size: var(--font-regular);
+  /* font-size: var(--font-regular); */
   font-weight: var(--font-regular);
   color: var(--color-black);
   margin: 8px 0;
 }
 
 p {
-  font-size: var(--font-regular);
+  /* font-size: var(--font-regular); */
   font-weight: var(--font-regular);
   color: var(--color-black);
   margin: 4px 0;
@@ -66,6 +66,15 @@ p {
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-light-blue);
+}
+
+.navbar button{
+  background-color: transparent;
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: var(--weight-bold);
+  font-family: 'Josefin+Sans';
 }
 
 .logoImageWrapper{
@@ -105,13 +114,60 @@ p {
 }
 
 
-.kclubDropdown button{
+.dropdownMenu button{
   font-weight: var(--weight-bold);
   background-color: transparent !important;
   border: transparent !important;
 }
-
 /* navbar end */
+
+
+/*Home*/
+.kClubIntro h1{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  
+}
+
+.kClubList{
+  display: flex;
+  justify-content: space-around;
+}
+
+.kClubImage{
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  object-fit:cover;
+  border-radius: 50%;
+  border: solid var(--color-white) 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.kClubImage h1{
+  color: white;
+  font-size: var(--font-medium);
+}
+
+.socialIcons{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.socialMediaIcon{
+  display: flex;
+  justify-content: center;
+  color: black;
+  width: 40px;
+  height: 40px;
+}
 
 /* Footer  start*/
 .footer-container {
