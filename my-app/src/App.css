@@ -105,13 +105,60 @@ p {
 }
 
 
-.kclubDropdown button{
+.dropdownMenu button{
   font-weight: var(--weight-bold);
   background-color: transparent !important;
   border: transparent !important;
 }
-
 /* navbar end */
+
+
+/*Home*/
+.kClubIntro h1{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  
+}
+
+.kClubList{
+  display: flex;
+  justify-content: space-around;
+}
+
+.kClubImage{
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  object-fit:cover;
+  border-radius: 50%;
+  border: solid var(--color-white) 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.kClubImage h1{
+  color: white;
+  font-size: var(--font-medium);
+}
+
+.socialIcons{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.socialMediaIcon{
+  display: flex;
+  justify-content: center;
+  color: black;
+  width: 40px;
+  height: 40px;
+}
 
 /* Footer  start*/
 .footer-container {

@@ -3,6 +3,7 @@ import { NavLink, BrowserRouter as Router, Link } from "react-router-dom";
 import logoImage from "../images/logoImage.png";
 import logo from "../images/logo.png";
 import KclubDropDown from "./KclubDropDown";
+import AboutUsDropDown from "./AboutUsDropDown";
 import { AccountContext } from "./Account";
 import Pool from "../service/userPool";
 
@@ -46,6 +47,7 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div>
+          {/* <AboutUsDropDown /> */}
           <KclubDropDown />
           {/* <NavLink to="/kclubs" className="linkmenuItem">
             K-Clubs
