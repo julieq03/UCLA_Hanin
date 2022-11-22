@@ -293,6 +293,20 @@ p {
 
 }
 
+.banner{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner h1{
+  color: white;
+}
+
 /* auth */
 .Auth-form-container {
   display: flex;
@@ -339,4 +353,49 @@ label {
 .errorMessage{
   font-family: 'Josefin+Sans';
   color: red;
+}
+
+.itemList{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+}
+
+.itemList table{
+  width: 80%;
+  margin: auto;
+}
+
+.itemList th{
+  font-weight: bold;
+}
+
+
+
+.itemLink{
+  font-family: 'Josefin+Sans';
+  color: black;
+  text-decoration: none;
+}
+
+.controlArea{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  
+}
+
+.controlArea label{
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.controlArea .searchBox{
+  flex-grow: 2;
+}
+
+.controlArea .filterBox{
+  flex-grow: 1;
+  padding-left: 2rem;
 }

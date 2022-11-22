@@ -78,7 +78,9 @@ const Navbar = () => {
         <div className="dropDownMenu">
           <Dropdown title="BRUIN MARKET">
             <Dropdown.Item>Rent</Dropdown.Item>
-            <Dropdown.Item>Buy / Sell</Dropdown.Item>
+            <NavLink to="/bruinmarket/buysell" className="linkmenuItem">
+              <Dropdown.Item>Buy / Sell</Dropdown.Item>
+            </NavLink>
             <Dropdown.Item>Trade</Dropdown.Item>
           </Dropdown>
         </div>

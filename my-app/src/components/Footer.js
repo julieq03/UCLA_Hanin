@@ -28,7 +28,7 @@ function Footer() {
           <div class="footer-link-items">
             <span>BRUIN MARKET</span>
             <Link to="/">RENT</Link>
-            <Link to="/">사고팔고</Link>
+            <Link to="/bruinmarket/buysell">사고팔고</Link>
             <Link to="/">나눔 / 교환</Link>
           </div>
           <div class="footer-link-items">

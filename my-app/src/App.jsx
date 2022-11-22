@@ -8,7 +8,8 @@ import Kubs from "./pages/Kubs";
 import Ksea from "./pages/Ksea";
 import LoginSignup from "./pages/LoginSignup";
 import Profile from './pages/Profile';
-
+import BuySell from './pages/buySell';
+import ItemDetails from './pages/ItemDetails'
 
 function App({userRepository}) {
   console.log("@app.jsx, userRepository: " , userRepository);
@@ -22,7 +23,8 @@ function App({userRepository}) {
       <Route path="kclubs/ksea" element={<Ksea />} />
       <Route path="/loginsignup" element={<LoginSignup userRepository={userRepository}/>} />
       <Route path="myprofile" element={<Profile />} />
-
+      <Route path="/bruinmarket/buysell" element={<BuySell />} />
+      <Route path="/itemDetails" element={<ItemDetails/>}/>
     </Routes>
   </BrowserRouter>
   );
