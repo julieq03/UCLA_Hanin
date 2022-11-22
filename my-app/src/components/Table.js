@@ -1,126 +1,106 @@
-import React from "react";
-import Table from "react-bootstrap/Table";
+import React, { useMemo, useState } from "react";
+//TODO dig deeper for useMemo
+import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
+import { useTable } from "react-table";
+import DummyItems from "./dummyItems.js";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 
-function TableComponent() {
+//TODO should read from database and map them into a table
+//react-table  https://kalacloud.com/blog/best-react-table-component/
+//Search bar reference: https://juejin.cn/post/7061863419636351006
+//TODO make 'status' entries separate tasks_components
+//TODO make 'category' a drop-down menu
+//TODO make decent search bar and filters
+//TODO style other places in this page
+
+function ItemList() {
+  const data = React.useMemo(() => DummyItems.tasks, []);
+  const columns = React.useMemo(() => DummyItems.headers);
+
+  const [tasks, setTasks] = useState([]);
+
+  const tableInstance = useTable({ columns, data });
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    tableInstance;
+
   return (
-    <>
-      <h3>Default Variant Small Size Theme Table</h3>
+    <React.Fragment>
+      <TableContainer className="itemList">
+        <Table {...getTableProps}>
+          <TableHead>
+            {
+              // Loop over the header rows
+              headerGroups.map((headerGroup) => (
+                // Apply the header row props
+                <TableRow {...headerGroup.getHeaderGroupProps}>
+                  {
+                    // Loop over the headers in each row
+                    headerGroup.headers.map((column) => (
+                      // Apply the header cell props
+                      <TableCell {...column.getHeaderProps}>
+                        {
+                          // Render the header
+                          column.render("Header")
+                        }
+                      </TableCell>
+                    ))
+                  }
+                </TableRow>
+              ))
+            }
+          </TableHead>
+          {/* Apply the table body props */}
+          <TableBody {...getTableBodyProps}>
+            {
+              // Loop over the table rows
+              rows.map((row) => {
+                // Prepare the row for display
+                prepareRow(row);
+                return (
+                  // Apply the row props
 
-      <Table stripped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th width="170">Student Name</th>
-            <th width="170">Reg.no</th>
-            <th width="170">Course</th>
-            <th width="870">City Name</th>
-            <th width="1950">Percentage</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Rakesh</td>
-            <td>1123</td>
-            <td>CSE</td>
-            <td>Mumbai</td>
-            <td>86.9%</td>
-          </tr>
-          <tr>
-            <td>Jackson</td>
-            <td>1124</td>
-            <td>ECE</td>
-            <td>Hyderabad</td>
-            <td>72.4%</td>
-          </tr>
-          <tr>
-            <td>Keshav</td>
-            <td>1124</td>
-            <td>CSE</td>
-            <td>Chennai</td>
-            <td>88%</td>
-          </tr>
-          <tr>
-            <td>Neilesh Jain</td>
-            <td>1125</td>
-            <td>EEE</td>
-            <td>Gwalior</td>
-            <td>66.9%</td>
-          </tr>
-          <tr>
-            <td>Akbar sheikh</td>
-            <td>1126</td>
-            <td>Mechanical</td>
-            <td>Indore</td>
-            <td>96.5%</td>
-          </tr>
-          <tr>
-            <td>Sarita</td>
-            <td>1127</td>
-            <td>CSE</td>
-            <td>Delhi</td>
-            <td>96.9%</td>
-          </tr>
-        </tbody>
-      </Table>
-
-      <h3>Dark Variant Small Size Table</h3>
-
-      <Table stripped bordered hover variant="dark" size="sm">
-        <thead>
-          <tr>
-            <th width="170">Student Name</th>
-            <th width="170">Reg.no</th>
-            <th width="170">Course</th>
-            <th width="870">City Name</th>
-            <th width="1950">Percentage</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Rakesh</td>
-            <td>1123</td>
-            <td>CSE</td>
-            <td>Mumbai</td>
-            <td>86.9%</td>
-          </tr>
-          <tr>
-            <td>Jackson</td>
-            <td>1124</td>
-            <td>ECE</td>
-            <td>Hyderabad</td>
-            <td>72.4%</td>
-          </tr>
-          <tr>
-            <td>Keshav</td>
-            <td>1124</td>
-            <td>CSE</td>
-            <td>Chennai</td>
-            <td>88%</td>
-          </tr>
-          <tr>
-            <td>Neilesh Jain</td>
-            <td>1125</td>
-            <td>EEE</td>
-            <td>Gwalior</td>
-            <td>66.9%</td>
-          </tr>
-          <tr>
-            <td>Akbar sheikh</td>
-            <td>1126</td>
-            <td>Mechanical</td>
-            <td>Indore</td>
-            <td>96.5%</td>
-          </tr>
-          <tr>
-            <td>Sarita</td>
-            <td>1127</td>
-            <td>CSE</td>
-            <td>Delhi</td>
-            <td>96.9%</td>
-          </tr>
-        </tbody>
-      </Table>
-    </>
+                  <TableRow {...row.getRowProps} className="tableRow">
+                    {
+                      // Loop over the rows cells
+                      row.cells.map((cell) => {
+                        // Apply the cell props
+                        return (
+                          <TableCell {...cell.getCellProps}>
+                            <Link
+                              to="/itemDetails"
+                              state={{
+                                item_customername: `${cell.row.original.customername}`,
+                                item_category: `${cell.row.original.category}`,
+                                item_price: `${cell.row.original.price}`,
+                                item_description: `${cell.row.original.description}`,
+                                item_date: `${cell.row.original.date}`,
+                                item_status: `${cell.row.original.status}`,
+                              }}
+                              className="itemLink"
+                            >
+                              {
+                                // Render the cell contents
+                                cell.render("Cell")
+                              }
+                            </Link>
+                          </TableCell>
+                        );
+                      })
+                    }
+                  </TableRow>
+                );
+              })
+            }
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </React.Fragment>
   );
 }
 
-export default TableComponent;
+export default ItemList;
