@@ -9,6 +9,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { useEffect } from "react";
 
 //TODO should read from database and map them into a table
 //react-table  https://kalacloud.com/blog/best-react-table-component/
@@ -18,7 +19,7 @@ import TableRow from "@mui/material/TableRow";
 //TODO make decent search bar and filters
 //TODO style other places in this page
 
-function ItemList() {
+function TableComponent({ categoryFilter }) {
   const data = React.useMemo(() => DummyItems.tasks, []);
   const columns = React.useMemo(() => DummyItems.headers);
 
@@ -27,6 +28,19 @@ function ItemList() {
   const tableInstance = useTable({ columns, data });
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
+
+  console.log("categoryFilter: ", categoryFilter);
+
+  // console.log("categoryFilter : ", categoryFilter);
+  // console.log("rows: ", rows);
+  rows.map((row) => {
+    console.log("row.original: ", row.original);
+    // console.log("row.cells[1]: ", row.cells[1]);
+  });
+
+  function getFilteredList() {
+    return rows.filter((row) => row.original.category === categoryFilter);
+  }
 
   return (
     <React.Fragment>
@@ -59,41 +73,46 @@ function ItemList() {
             {
               // Loop over the table rows
               rows.map((row) => {
-                // Prepare the row for display
-                prepareRow(row);
-                return (
-                  // Apply the row props
+                if (
+                  categoryFilter === "Show All" ||
+                  row.original.category === categoryFilter
+                ) {
+                  // Prepare the row for display
+                  prepareRow(row);
+                  return (
+                    // Apply the row props
 
-                  <TableRow {...row.getRowProps} className="tableRow">
-                    {
-                      // Loop over the rows cells
-                      row.cells.map((cell) => {
-                        // Apply the cell props
-                        return (
-                          <TableCell {...cell.getCellProps}>
-                            <Link
-                              to="/itemDetails"
-                              state={{
-                                item_customername: `${cell.row.original.customername}`,
-                                item_category: `${cell.row.original.category}`,
-                                item_price: `${cell.row.original.price}`,
-                                item_description: `${cell.row.original.description}`,
-                                item_date: `${cell.row.original.date}`,
-                                item_status: `${cell.row.original.status}`,
-                              }}
-                              className="itemLink"
-                            >
-                              {
-                                // Render the cell contents
-                                cell.render("Cell")
-                              }
-                            </Link>
-                          </TableCell>
-                        );
-                      })
-                    }
-                  </TableRow>
-                );
+                    <TableRow {...row.getRowProps} className="tableRow">
+                      {
+                        // Loop over the rows cells
+                        row.cells.map((cell) => {
+                          // Apply the cell props
+                          return (
+                            <TableCell {...cell.getCellProps}>
+                              <Link
+                                to="/itemDetails"
+                                state={{
+                                  item_customername: `${cell.row.original.customername}`,
+                                  item_category: `${cell.row.original.category}`,
+                                  item_price: `${cell.row.original.price}`,
+                                  item_description: `${cell.row.original.description}`,
+                                  item_date: `${cell.row.original.date}`,
+                                  item_status: `${cell.row.original.status}`,
+                                }}
+                                className="itemLink"
+                              >
+                                {
+                                  // Render the cell contents
+                                  cell.render("Cell")
+                                }
+                              </Link>
+                            </TableCell>
+                          );
+                        })
+                      }
+                    </TableRow>
+                  );
+                }
               })
             }
           </TableBody>
@@ -103,4 +122,4 @@ function ItemList() {
   );
 }
 
-export default ItemList;
+export default TableComponent;
