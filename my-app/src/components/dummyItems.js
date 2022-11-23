@@ -29,7 +29,7 @@ export default {
     {
       key: 0,
       customername: "Danny Lee",
-      category: "음식",
+      category: "Food",
       price: "$1",
       description: "먹다남은 신라면 팝니다.",
       date: "11/22/2022",
@@ -39,7 +39,7 @@ export default {
     {
       key: 1,
       customername: "Hannah",
-      category: "전자기기",
+      category: "Electronics",
       price: "$100",
       description: "에어팟프로 미개봉 팝니다",
       date: "11/21/2022",
@@ -49,7 +49,7 @@ export default {
     {
       key: 2,
       customername: "준성",
-      category: "음식",
+      category: "Food",
       price: "$11",
       description: "먹다남은 프로틴 팔아요.",
       date: "11/12/2022",
@@ -59,7 +59,7 @@ export default {
     {
       key: 3,
       customername: "쩡우박",
-      category: "의류",
+      category: "Clothes",
       price: "$11",
       description: "비니 팝니다",
       date: "11/01/2022",
@@ -69,10 +69,20 @@ export default {
     {
       key: 4,
       customername: "sunmoonKim",
-      category: "전자기기",
+      category: "Electronics",
       price: "$111",
       description: "모니터 팝니다",
       date: "10/11/2022",
+      status: "Selling",
+      itemId: "itemId5",
+    },
+    {
+      key: 5,
+      customername: "yangachi",
+      category: "Others",
+      price: "$100",
+      description: "UCLA vs USC 풋볼 티켓 팝니다",
+      date: "10/-1/2022",
       status: "Selling",
       itemId: "itemId5",
     },
