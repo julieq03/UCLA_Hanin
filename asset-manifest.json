@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/UCLA_Hanin/static/css/main.18b51f74.css",
-    "main.js": "/UCLA_Hanin/static/js/main.3e8423cd.js",
-    "static/media/buysell.jpg": "/UCLA_Hanin/static/media/buysell.da485a8ee965123820bb.jpg",
-    "static/media/roycehall.jpeg": "/UCLA_Hanin/static/media/roycehall.2c1d8a10471a2869a84a.jpeg",
-    "static/media/kubs.png": "/UCLA_Hanin/static/media/kubs.049a44e2a75ea33ce5e8.png",
-    "static/media/ksea.png": "/UCLA_Hanin/static/media/ksea.9c9f481739386dd3a937.png",
-    "static/media/kojobs.png": "/UCLA_Hanin/static/media/kojobs.e8fb1c8a0de13be40afa.png",
-    "static/media/logo.png": "/UCLA_Hanin/static/media/logo.93a660366eef7c058635.png",
-    "index.html": "/UCLA_Hanin/index.html",
-    "main.18b51f74.css.map": "/UCLA_Hanin/static/css/main.18b51f74.css.map",
-    "main.3e8423cd.js.map": "/UCLA_Hanin/static/js/main.3e8423cd.js.map"
+    "main.css": "/static/css/main.18b51f74.css",
+    "main.js": "/static/js/main.d31fb065.js",
+    "static/media/buysell.jpg": "/static/media/buysell.da485a8ee965123820bb.jpg",
+    "static/media/roycehall.jpeg": "/static/media/roycehall.2c1d8a10471a2869a84a.jpeg",
+    "static/media/kubs.png": "/static/media/kubs.049a44e2a75ea33ce5e8.png",
+    "static/media/ksea.png": "/static/media/ksea.9c9f481739386dd3a937.png",
+    "static/media/kojobs.png": "/static/media/kojobs.e8fb1c8a0de13be40afa.png",
+    "static/media/logo.png": "/static/media/logo.93a660366eef7c058635.png",
+    "index.html": "/index.html",
+    "main.18b51f74.css.map": "/static/css/main.18b51f74.css.map",
+    "main.d31fb065.js.map": "/static/js/main.d31fb065.js.map"
   },
   "entrypoints": [
     "static/css/main.18b51f74.css",
-    "static/js/main.3e8423cd.js"
+    "static/js/main.d31fb065.js"
   ]
 }
