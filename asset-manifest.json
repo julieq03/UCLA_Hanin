@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://seunghoonlee95.github.io/UCLA_Hanin/static/css/main.18b51f74.css",
-    "main.js": "https://seunghoonlee95.github.io/UCLA_Hanin/static/js/main.59986b58.js",
+    "main.js": "https://seunghoonlee95.github.io/UCLA_Hanin/static/js/main.508b5768.js",
     "static/media/buysell.jpg": "https://seunghoonlee95.github.io/UCLA_Hanin/static/media/buysell.da485a8ee965123820bb.jpg",
     "static/media/roycehall.jpeg": "https://seunghoonlee95.github.io/UCLA_Hanin/static/media/roycehall.2c1d8a10471a2869a84a.jpeg",
     "static/media/kubs.png": "https://seunghoonlee95.github.io/UCLA_Hanin/static/media/kubs.049a44e2a75ea33ce5e8.png",
@@ -10,10 +10,10 @@
     "static/media/logo.png": "https://seunghoonlee95.github.io/UCLA_Hanin/static/media/logo.93a660366eef7c058635.png",
     "index.html": "https://seunghoonlee95.github.io/UCLA_Hanin/index.html",
     "main.18b51f74.css.map": "https://seunghoonlee95.github.io/UCLA_Hanin/static/css/main.18b51f74.css.map",
-    "main.59986b58.js.map": "https://seunghoonlee95.github.io/UCLA_Hanin/static/js/main.59986b58.js.map"
+    "main.508b5768.js.map": "https://seunghoonlee95.github.io/UCLA_Hanin/static/js/main.508b5768.js.map"
   },
   "entrypoints": [
     "static/css/main.18b51f74.css",
-    "static/js/main.59986b58.js"
+    "static/js/main.508b5768.js"
   ]
 }
