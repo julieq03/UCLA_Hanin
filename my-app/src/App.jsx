@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Router, HashRouter} from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from "./pages/AboutUs";
 import Kojobs from "./pages/Kojobs";
@@ -14,7 +14,7 @@ import ItemDetails from './pages/ItemDetails'
 function App({userRepository}) {
   console.log("@app.jsx, userRepository: " , userRepository);
   return (
-    <BrowserRouter>
+    <HashRouter >
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="aboutus" element={<AboutUs />} />
@@ -26,7 +26,7 @@ function App({userRepository}) {
       <Route path="/bruinmarket/buysell" element={<BuySell />} />
       <Route path="/itemDetails" element={<ItemDetails/>}/>
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
   );
 
   
