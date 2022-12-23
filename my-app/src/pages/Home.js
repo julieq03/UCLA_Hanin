@@ -21,7 +21,8 @@ function Home() {
         style={{ backgroundImage: `url(${roycehall})` }}
       >
         <div className="homepageBannerTitle">
-          <h1>UCLA Koreans Association</h1>
+          <h1>UCLA</h1>
+          <h2>Koreans Association</h2>
           <NavLink to="/aboutus" className="linkmenuItem">
             Learn more ➜
           </NavLink>
@@ -35,7 +36,7 @@ function Home() {
               className="kClubImage"
               style={{ backgroundImage: `url(${kojobsImage})` }}
             >
-              <h1>KOJOBS</h1>
+              {/* <h1>KOJOBS</h1> */}
             </article>
             <a
               href="https://www.instagram.com/kojobs_ucla/"
@@ -47,6 +48,9 @@ function Home() {
                 className="socialMediaIcon"
               ></FontAwesomeIcon>
             </a>
+            <a href="#">
+              <h1>KOJOBS</h1>
+            </a>
           </div>
 
           <div className="kClubBanner">
@@ -54,7 +58,7 @@ function Home() {
               className="kClubImage"
               style={{ backgroundImage: `url(${kubsImage})` }}
             >
-              <h1>KUBS</h1>
+              {/* <h1>KUBS</h1> */}
             </article>
             <a
               href="https://www.instagram.com/ucla_kubs/"
@@ -66,13 +70,16 @@ function Home() {
                 className="socialMediaIcon"
               ></FontAwesomeIcon>
             </a>
+            <a href="#">
+              <h1>KUBS</h1>
+            </a>
           </div>
           <div className="kClubBanner">
             <article
               className="kClubImage"
               style={{ backgroundImage: `url(${kseaImage})` }}
             >
-              <h1>KSEA</h1>
+              {/* <h1>KSEA</h1> */}
             </article>
             <a
               href="https://www.instagram.com/bruinksea/"
@@ -83,6 +90,9 @@ function Home() {
                 icon={faInstagram}
                 className="socialMediaIcon"
               ></FontAwesomeIcon>
+            </a>
+            <a href="#">
+              <h1>KSEA</h1>
             </a>
           </div>
         </div>
